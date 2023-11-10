@@ -1,4 +1,5 @@
 ﻿using Application.Context;
+using Domain.Models;
 
 namespace Application.Services
 {
@@ -9,6 +10,11 @@ namespace Application.Services
         public BankAccountService(BankContext dbcontext)
         {
             context = dbcontext;
+        }
+
+        public IEnumerable<BankAccount> GetAll()
+        {
+            return context.BankAccounts;
         }
     }
 }
