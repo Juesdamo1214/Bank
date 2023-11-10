@@ -22,7 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Services\Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
