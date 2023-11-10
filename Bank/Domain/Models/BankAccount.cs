@@ -12,6 +12,6 @@ namespace Domain.Models
         public Guid IdAccount { get; set; }
         public string Holder {  get; set; }
         public decimal Balance { get; set; }
-        public List<Transaction> Transactions { get; set; }
+        public ICollection<Transaction> Transactions { get; set; }
     }
 }
