@@ -18,8 +18,16 @@ namespace Application.Services.Commands
             var account = context.BankAccounts.Find(id);
             if (account == null)
             {
-                if (transaction.Type == TransferType.Deposit) account.Balance += transaction.Value;
-                if (transaction.Type == TransferType.Retirement) account.Balance -= transaction.Value;
+                if (transaction.Type == TransferType.Deposit)
+                {
+                    account.Balance += transaction.Value;
+                    context.SaveChanges();
+                }
+                if (transaction.Type == TransferType.Retirement)
+                {
+                    account.Balance -= transaction.Value;
+                    context.SaveChanges();
+                }
             }
 
            
