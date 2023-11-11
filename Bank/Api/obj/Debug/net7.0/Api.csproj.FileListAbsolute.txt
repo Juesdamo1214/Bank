@@ -89,3 +89,4 @@ C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\refin
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.pdb
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.genruntimeconfig.cache
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\ref\Api.dll
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.MvcApplicationPartsAssemblyInfo.cs
