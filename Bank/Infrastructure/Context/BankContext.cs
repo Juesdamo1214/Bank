@@ -32,7 +32,7 @@ namespace Application.Context
             {
                 accountBanks.ToTable("BankAccount");
                 accountBanks.HasKey(accountBanks => accountBanks.IdAccount);
-                accountBanks.Property(accountBank => accountBank.Holder).IsRequired().HasMaxLength(200);
+                accountBanks.Property(accountBank => accountBank.Owner).IsRequired().HasMaxLength(200);
                 accountBanks.Property(accountBank=> accountBank.Balance).IsRequired();
 
             });
