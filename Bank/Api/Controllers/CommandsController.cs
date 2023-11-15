@@ -1,47 +1,69 @@
 ﻿using Application.Interface;
+using Application.Interface.Repository;
 using Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
+    [Route("commands")]
     public class CommandsController : ControllerBase
     {
-        ICommands commands;
+        ICommandsRepository<BankAccount> _commandsBankAccount;
+        ICommandsRepository<Transaction> _commandsTransaction;
 
-        public CommandsController(ICommands command)
+        public CommandsController( ICommandsRepository<BankAccount> commandsBankAccount, ICommandsRepository<Transaction> commandsTransaction)
         {
-            commands = command;
+            _commandsBankAccount = commandsBankAccount;
+            _commandsTransaction = commandsTransaction;
         }
 
-        [HttpPost]
+        [HttpPost("account")]
         public IActionResult CreateAccount([FromBody] BankAccount bankAccount)
         {
-            commands.BankAccountCreate(bankAccount);
+            _commandsBankAccount.create(bankAccount);
             return Ok();
         }
 
-        [HttpPost("{id}")]
-        public IActionResult TransactionAccount(Guid id, [FromBody] Transaction transaction)
-        {
-            commands.AccountTransaction(id, transaction);
-            return Ok();
-        }
-
-        [HttpPut("{id}")]
+        [HttpPut("account/{id}")]
         public IActionResult UpdateAccount(Guid id, [FromBody] BankAccount bankAccount)
         {
-            commands.BankAccountUpdate(id, bankAccount);
+            _commandsBankAccount.update(id, bankAccount);
             return Ok();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("account/{id}")]
 
         public IActionResult DeleteAccount(Guid id)
         {
-            commands.BankAccountDelete(id);
+            _commandsBankAccount.delete(id);
             return Ok();
         }
+
+        [HttpPost("transaction")]
+        public IActionResult CreateTransaction([FromBody] Transaction transaction)
+        {
+            _commandsTransaction.create(transaction);
+            return Ok();
+        }
+
+        [HttpPut("transaction/{id}")]
+        public IActionResult UpdateTransaction(Guid id, [FromBody] Transaction transaction)
+        {
+            _commandsTransaction.update(id, transaction);
+            return Ok();
+        }
+
+        [HttpDelete("transaction/{id}")]
+
+        public IActionResult DeleteTransaction(Guid id)
+        {
+            _commandsTransaction.delete(id);
+            return Ok();
+        }
+
+
+
     }
 
 }
