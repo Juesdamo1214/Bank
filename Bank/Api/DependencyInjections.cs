@@ -6,15 +6,15 @@ using Domain.Models;
 
 namespace Api
 {
-    public class DependencyInjections
+    public static class DependencyInjections
     {
-        public static void Inject(IServiceCollection services)
+        public static void Inject(this WebApplicationBuilder builder)
         {
-            services.AddScoped<IQueriesRepository<BankAccount>, BankAccountQuieres>();
-            services.AddScoped<ICommandsRepository<BankAccount>, BankAccountCommands>();
+            builder.Services.AddScoped<IQueriesRepository<BankAccount>, BankAccountQuieres>();
+            builder.Services.AddScoped<ICommandsRepository<BankAccount>, BankAccountCommands>();
             //builder.Services.AddScoped<IQueriesRepository<Transaction>, TransactionQueries>();
-            services.AddScoped<ICommandsRepository<Transaction>, TransactionsCommands>();
-            services.AddScoped<ITransactionQueries, TransactionQueries>();
+            builder.Services.AddScoped<ICommandsRepository<Transaction>, TransactionsCommands>();
+            builder.Services.AddScoped<ITransactionQueries, TransactionQueries>();
         }
     }
 }

@@ -1,3 +1,4 @@
+using Api;
 using Application.Context;
 using Application.Interface;
 using Application.Interface.Repository;
@@ -17,6 +18,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSqlServer<BankContext>(builder.Configuration.GetConnectionString("cnBank"));
+
+builder.Inject();
 
 var app = builder.Build();
 
