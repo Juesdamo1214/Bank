@@ -1,5 +1,7 @@
 using Application.Context;
+using Application.Interface;
 using Application.Interface.Repository;
+using Application.Services.Commands;
 using Application.Services.Querie;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -15,10 +17,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSqlServer<BankContext>(builder.Configuration.GetConnectionString("cnBank"));
-
-//builder.Services.AddScoped<BankAccountGetAll>();
-//builder.Services.AddScoped<ICommands>();
-builder.Services.AddScoped < IQueriesRepository<BankAccount>, BankAccountQuieres>;
 
 var app = builder.Build();
 

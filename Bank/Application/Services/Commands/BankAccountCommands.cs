@@ -11,7 +11,7 @@ namespace Application.Services.Commands
 {
     public class BankAccountCommands : ICommandsRepository<BankAccount>
     {
-        BankContext context;
+        private readonly BankContext context;
 
         public BankAccountCommands(BankContext dbcontext)
         {
