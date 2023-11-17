@@ -2,82 +2,86 @@
 using Application.Interface.Repository;
 using Domain.Enum;
 using Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infrastructure.Repository;
 
 namespace Application.Services.Commands
 {
-    public class TransactionsCommands : ICommandsRepository<Transaction>
+    public class TransactionsCommands
     {
-        BankContext context;
+        private readonly IRepository<Transaction> _transactionRepository;
+        private readonly IRepository<BankAccount> _bankAccountRepository;
 
-        public TransactionsCommands(BankContext dbcontext)
+        public TransactionsCommands(IRepository<Transaction> transactionRepository, IRepository<BankAccount> bankAccountRepository)
         {
-            context = dbcontext;
+            _transactionRepository = transactionRepository;
+            _bankAccountRepository = bankAccountRepository;
         }
 
         public void create(Transaction transaction)
         {
-            var account = context.BankAccounts.Find(transaction.IdAccount);
+            var account = _bankAccountRepository.GetById(transaction.IdAccount);
             if (account != null)
             {
-                if (transaction.Type == TransferType.Deposit)
+                if(transaction.Type == TransferType.Deposit)
                 {
                     account.Balance += transaction.Value;
-                    context.SaveChanges();
+                    _bankAccountRepository.Update(account);
+                    _transactionRepository.Add(transaction);
                 }
                 if (transaction.Type == TransferType.Retirement)
                 {
                     account.Balance -= transaction.Value;
-                    context.SaveChanges();
+                    _bankAccountRepository.Update(account);
+                    _transactionRepository.Add(transaction);
                 }
             }
         }
 
         public void delete(Guid id)
         {
-            var transaction = context.Transactions.Find(id);
-            var account = context.BankAccounts.Find(transaction.IdAccount);
+            var transaction = _transactionRepository.GetById(id);
+            var account = _bankAccountRepository.GetById(transaction.IdAccount);
+
             if (transaction != null)
             {
-                if(transaction.Type == TransferType.Deposit)
+                if (transaction.Type == TransferType.Deposit)
                 {
                     account.Balance -= transaction.Value;
-                    context.Remove(transaction);
-                    context.SaveChanges();
+                    _bankAccountRepository.Update(account);
+                    _transactionRepository.Delete(transaction);
                 }
-                if(transaction.Type == TransferType.Retirement)
+                if (transaction.Type == TransferType.Retirement)
                 {
                     account.Balance += transaction.Value;
-                    context.Remove(transaction);
-                    context.SaveChanges();
+                    _bankAccountRepository.Update(account);
+                    _transactionRepository.Delete(transaction);
                 }
             }
         }
 
         public void update(Guid id, Transaction command)
         {
-            var transaction = context.Transactions.Find(id);
-            var account = context.BankAccounts.Find(transaction.IdAccount);
+            var transaction = _transactionRepository.GetById(id);
+            var account = _bankAccountRepository.GetById(transaction.IdAccount);
 
             if (transaction != null)
             {
-                if( command.Type == TransferType.Deposit)
+                if(transaction.Type == TransferType.Deposit)
                 {
-                    transaction.Value = command.Value;
-                    transaction.Type = command.Type;
-                    account.Balance += transaction.Value;
-                    context.SaveChanges();
+                        account.Balance -= transaction.Value;
+                        transaction.Value = command.Value;
+                        account.Balance += transaction.Value;
+                        _bankAccountRepository.Update(account);
+                        _transactionRepository.Update(transaction);
+                        
                 }
-                if (command.Type == TransferType.Retirement)
+                if (transaction.Type == TransferType.Retirement)
                 {
+                    account.Balance += transaction.Value;
                     transaction.Value = command.Value;
-                    transaction.Type = command.Type;
                     account.Balance -= transaction.Value;
-                    context.SaveChanges();
+                    _bankAccountRepository.Update(account);
+                    _transactionRepository.Update(transaction);
                 }
             }
         }

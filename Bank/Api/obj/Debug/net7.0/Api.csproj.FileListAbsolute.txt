@@ -1,10 +1,3 @@
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.csproj.AssemblyReference.cache
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.AssemblyInfoInputs.cache
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.AssemblyInfo.cs
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.csproj.CoreCompileInputs.cache
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.sourcelink.json
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\appsettings.json
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Api.exe
@@ -75,6 +68,14 @@ C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Infra
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Application.pdb
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Domain.pdb
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Infrastructure.pdb
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.csproj.AssemblyReference.cache
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.AssemblyInfoInputs.cache
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.AssemblyInfo.cs
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.csproj.CoreCompileInputs.cache
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.sourcelink.json
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\staticwebassets\msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props
@@ -89,4 +90,3 @@ C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\refin
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.pdb
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.genruntimeconfig.cache
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\ref\Api.dll
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.MvcApplicationPartsAssemblyInfo.cs

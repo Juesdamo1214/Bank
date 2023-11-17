@@ -1,52 +1,40 @@
-﻿using Application.Context;
-using Application.Interface.Repository;
-using Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Models;
+using Infrastructure.Repository;
 
 namespace Application.Services.Commands
 {
-    public class BankAccountCommands : ICommandsRepository<BankAccount>
+    public class BankAccountCommands 
     {
-        private readonly BankContext context;
+        private readonly IRepository<BankAccount> _bankAccountRepository;
 
-        public BankAccountCommands(BankContext dbcontext)
+        public BankAccountCommands(IRepository<BankAccount> bankAccountRepository)
         {
-            context = dbcontext;
+            _bankAccountRepository = bankAccountRepository;
         }
 
-        public void create(BankAccount command)
+        public async Task create(BankAccount command)
         {
-            context.Add(command);
-            context.SaveChanges();
+            _bankAccountRepository.Add(command);
         }
 
         public void delete(Guid id)
         {
-            var accountActual = context.BankAccounts.Find(id);
-            var transactions = context.Transactions.Where(item => item.IdAccount == id);
-
-            if (accountActual != null)
+            var account = _bankAccountRepository.GetById(id);
+            if (account != null)
             {
-                context.Remove(accountActual);
-                context.Remove(transactions);
-                context.SaveChanges();
+                _bankAccountRepository.Delete(account);
             }
         }
 
         public void update(Guid id, BankAccount command)
         {
-            var accountActual = context.BankAccounts.Find(id);
-
-            if (accountActual != null)
+            var account = _bankAccountRepository.GetById(id);
+            if(account != null)
             {
-                accountActual.Owner = command.Owner;
-
-                context.SaveChanges();
+                account.Owner = command.Owner;
+                _bankAccountRepository.Update(account);
             }
+
         }
     }
 }

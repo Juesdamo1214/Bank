@@ -22,7 +22,7 @@ namespace Application.Context
 
                 transactions.HasOne(transaction => transaction.BankAccount)
                 .WithMany(transaction => transaction.Transactions)
-                .HasForeignKey(transaction => transaction.IdAccount);
+                .HasForeignKey(transaction => transaction.IdAccount).OnDelete(DeleteBehavior.Cascade);
 
             });
 
