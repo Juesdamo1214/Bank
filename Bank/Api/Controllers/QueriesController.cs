@@ -1,6 +1,8 @@
 ﻿using Application.Interface;
 using Application.Interface.Repository;
+using Application.Services.Querie;
 using Domain.Models;
+using Infrastructure.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -8,14 +10,15 @@ namespace Api.Controllers
     [Route("queries")]
     public class QueriesController : ControllerBase
     {
-        IQueriesRepository<BankAccount> _queriesBankAccount;
-        IQueriesRepository<Transaction> _queriesTransaction;
-        ITransactionQueries _querieTransactionAccount;
-        public QueriesController(IQueriesRepository<Transaction> queriesTransaction, IQueriesRepository<BankAccount> queriesBankAccount, ITransactionQueries querieTransactionAccount)
+        private readonly BankAccountQuieres _queriesBankAccount;
+        private readonly TransactionQueries _queriesTransactionAccount;
+        private readonly ITransactionQueries<Transaction> _transactionquerie;
+
+        public QueriesController(BankAccountQuieres queriesBankAccount, TransactionQueries querieTransactionAccount, ITransactionQueries<Transaction> transactionquerie)
         {
-            _queriesTransaction = queriesTransaction;
             _queriesBankAccount = queriesBankAccount;
-            _querieTransactionAccount = querieTransactionAccount;
+            _queriesTransactionAccount = querieTransactionAccount;
+            _transactionquerie = transactionquerie;
         }
 
         [HttpGet("accounts")]
@@ -33,19 +36,19 @@ namespace Api.Controllers
         [HttpGet("transactions")]
         public ActionResult GetAllTransaction()
         {
-            return Ok(_queriesTransaction.GetAll());
+            return Ok(_queriesTransactionAccount.GetAll());
         }
 
         [HttpGet("transactions/{id}")]
         public ActionResult GetTransactionById(Guid id)
         {
-            return Ok(_queriesTransaction.GetById(id));
+            return Ok(_queriesTransactionAccount.GetById(id));
         }
 
         [HttpGet("transactions/accounts/{id}")]
         public ActionResult GetTransactionsByAccount(Guid id) 
         {
-            return Ok(_querieTransactionAccount.TransactionAccountOwner(id));
+            return Ok(_transactionquerie.TransactionAccountOwner(id));
         }
     }
 }

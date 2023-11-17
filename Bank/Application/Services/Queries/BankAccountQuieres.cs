@@ -1,26 +1,25 @@
-﻿using Application.Context;
-using Application.Interface.Repository;
-using Domain.Models;
+﻿using Domain.Models;
+using Infrastructure.Repository;
 
 namespace Application.Services.Querie
 {
-    public class BankAccountQuieres : IQueriesRepository<BankAccount>
+    public class BankAccountQuieres 
     {
-        BankContext context;
+        private readonly IRepository<BankAccount> _bankAccountRepository;
 
-        public BankAccountQuieres(BankContext dbcontext)
+        public BankAccountQuieres(IRepository<BankAccount> bankAccountRepository)
         {
-            context = dbcontext;
+            _bankAccountRepository = bankAccountRepository;
         }
 
         public BankAccount GetById(Guid id)
         {
-            return context.BankAccounts.FirstOrDefault(account => account.IdAccount == id);
+            return _bankAccountRepository.GetById(id);
         }
 
         public IEnumerable<BankAccount> GetAll()
         {
-            return context.BankAccounts;
+            return _bankAccountRepository.GetAll();
         }
     }
 }

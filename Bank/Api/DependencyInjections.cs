@@ -3,6 +3,8 @@ using Application.Interface;
 using Application.Services.Commands;
 using Application.Services.Querie;
 using Domain.Models;
+using Infrastructure.Repository;
+using Infrastructure;
 
 namespace Api
 {
@@ -10,11 +12,13 @@ namespace Api
     {
         public static void Inject(this WebApplicationBuilder builder)
         {
-            builder.Services.AddScoped<IQueriesRepository<BankAccount>, BankAccountQuieres>();
-            builder.Services.AddScoped<ICommandsRepository<BankAccount>, BankAccountCommands>();
-            //builder.Services.AddScoped<IQueriesRepository<Transaction>, TransactionQueries>();
-            builder.Services.AddScoped<ICommandsRepository<Transaction>, TransactionsCommands>();
-            builder.Services.AddScoped<ITransactionQueries, TransactionQueries>();
+            builder.Services.AddScoped<IRepository<BankAccount>, BankRepository<BankAccount>>();
+            builder.Services.AddScoped<IRepository<Transaction>, BankRepository<Transaction>>();
+            builder.Services.AddScoped<BankAccountQuieres>();
+            builder.Services.AddScoped<ITransactionQueries<Transaction>, TransactionQueries>();
+            builder.Services.AddScoped<TransactionQueries>();
+            builder.Services.AddScoped<BankAccountCommands>();
+            builder.Services.AddScoped<TransactionsCommands>();
         }
     }
 }

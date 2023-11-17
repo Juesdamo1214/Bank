@@ -1,6 +1,8 @@
 ﻿using Application.Interface;
 using Application.Interface.Repository;
+using Application.Services.Commands;
 using Domain.Models;
+using Infrastructure.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +11,10 @@ namespace Api.Controllers
     [Route("commands")]
     public class CommandsController : ControllerBase
     {
-        ICommandsRepository<BankAccount> _commandsBankAccount;
-        ICommandsRepository<Transaction> _commandsTransaction;
+        private readonly BankAccountCommands _commandsBankAccount;
+        private readonly TransactionsCommands _commandsTransaction;
 
-        public CommandsController( ICommandsRepository<BankAccount> commandsBankAccount, ICommandsRepository<Transaction> commandsTransaction)
+        public CommandsController(BankAccountCommands commandsBankAccount, TransactionsCommands commandsTransaction)
         {
             _commandsBankAccount = commandsBankAccount;
             _commandsTransaction = commandsTransaction;
