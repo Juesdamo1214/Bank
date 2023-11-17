@@ -18,3 +18,5 @@ C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Application\obj\Debug\net7
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Application\obj\Debug\net7.0\Application.pdb
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Application\obj\Debug\net7.0\Application.genruntimeconfig.cache
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Application\obj\Debug\net7.0\ref\Application.dll
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Application\obj\Debug\net7.0\Application.Services.Resources.Resource.resources
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Application\obj\Debug\net7.0\Application.csproj.GenerateResource.cache

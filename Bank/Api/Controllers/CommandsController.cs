@@ -1,4 +1,5 @@
-﻿using Application.Interface;
+﻿using Api.Controllers._Resource;
+using Application.Interface;
 using Application.Interface.Repository;
 using Application.Services.Commands;
 using Domain.Models;
@@ -45,8 +46,9 @@ namespace Api.Controllers
         [HttpPost("transaction")]
         public IActionResult CreateTransaction([FromBody] Transaction transaction)
         {
-            _commandsTransaction.create(transaction);
-            return Ok();
+            var validation = _commandsTransaction.Create(transaction);
+            if( validation == Resource.ExitoTransacion) return Ok(validation);
+            return BadRequest(validation);
         }
 
         [HttpPut("transaction/{id}")]

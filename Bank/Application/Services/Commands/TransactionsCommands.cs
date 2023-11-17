@@ -1,5 +1,4 @@
-﻿using Application.Context;
-using Application.Interface.Repository;
+﻿using Application.Services.Resources;
 using Domain.Enum;
 using Domain.Models;
 using Infrastructure.Repository;
@@ -17,24 +16,29 @@ namespace Application.Services.Commands
             _bankAccountRepository = bankAccountRepository;
         }
 
-        public void create(Transaction transaction)
+        public string Create(Transaction transaction)
         {
             var account = _bankAccountRepository.GetById(transaction.IdAccount);
-            if (account != null)
+            if (account == null) return Resource.Cuenta;
+            if(transaction.Type == TransferType.Deposit)
             {
-                if(transaction.Type == TransferType.Deposit)
-                {
-                    account.Balance += transaction.Value;
-                    _bankAccountRepository.Update(account);
-                    _transactionRepository.Add(transaction);
-                }
-                if (transaction.Type == TransferType.Retirement)
+                account.Balance += transaction.Value;
+                _bankAccountRepository.Update(account);
+                _transactionRepository.Add(transaction);
+                return Resource.ExitoTransacion;
+            }
+            if (transaction.Type == TransferType.Retirement)
+            {
+                if(account.Balance >=  transaction.Value) 
                 {
                     account.Balance -= transaction.Value;
                     _bankAccountRepository.Update(account);
                     _transactionRepository.Add(transaction);
+                    return Resource.ExitoTransacion;
                 }
+                return Resource.BalanceMenor;
             }
+            return Resource.Tipo;
         }
 
         public void delete(Guid id)
