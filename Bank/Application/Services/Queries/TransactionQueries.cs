@@ -1,8 +1,6 @@
-﻿using Application.Context;
-using Application.Interface;
+﻿using Application.Interface;
+using Application.Repository;
 using Domain.Models;
-using Infrastructure.Repository;
-using System.Security.AccessControl;
 
 namespace Application.Services.Querie
 {

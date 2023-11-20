@@ -1,8 +1,6 @@
 ﻿using Application.Interface;
-using Application.Interface.Repository;
 using Application.Services.Querie;
 using Domain.Models;
-using Infrastructure.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers

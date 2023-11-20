@@ -1,10 +1,6 @@
 ﻿using Api.Controllers._Resource;
-using Application.Interface;
-using Application.Interface.Repository;
 using Application.Services.Commands;
 using Domain.Models;
-using Infrastructure.Repository;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -24,8 +20,9 @@ namespace Api.Controllers
         [HttpPost("account")]
         public IActionResult CreateAccount([FromBody] BankAccount bankAccount)
         {
-            _commandsBankAccount.create(bankAccount);
-            return Ok();
+            var validation = _commandsBankAccount.Create(bankAccount);
+            if (validation == Resource.CuentaCreada) return Ok(validation);
+            return BadRequest(validation);
         }
 
         [HttpPut("account/{id}")]

@@ -1,10 +1,5 @@
 using Api;
 using Application.Context;
-using Application.Interface;
-using Application.Interface.Repository;
-using Application.Services.Commands;
-using Application.Services.Querie;
-using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

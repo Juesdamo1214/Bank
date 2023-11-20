@@ -123,6 +123,12 @@
   <data name="Cuenta" xml:space="preserve">
     <value>No se encontro la cuenta</value>
   </data>
+  <data name="CuentaCreada" xml:space="preserve">
+    <value>Cuenta creada exitosamente!</value>
+  </data>
+  <data name="CuentaExiste" xml:space="preserve">
+    <value>Cuenta existente!</value>
+  </data>
   <data name="ExitoTransacion" xml:space="preserve">
     <value>Transacion Exitosa</value>
   </data>

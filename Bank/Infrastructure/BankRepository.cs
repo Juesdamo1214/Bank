@@ -1,5 +1,5 @@
 ﻿using Application.Context;
-using Infrastructure.Repository;
+using Application.Repository;
 
 namespace Infrastructure
 {
