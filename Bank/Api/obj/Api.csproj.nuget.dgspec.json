@@ -30,6 +30,9 @@
             "projectReferences": {
               "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Application\\Application.csproj": {
                 "projectPath": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Application\\Application.csproj"
+              },
+              "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -130,9 +133,6 @@
             "projectReferences": {
               "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Domain\\Domain.csproj"
-              },
-              "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -305,6 +305,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Application\\Application.csproj"
+              },
               "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioBank\\Bank\\Domain\\Domain.csproj"
               }

@@ -1,9 +1,8 @@
-﻿using Application.Interface.Repository;
-using Application.Interface;
+﻿using Application.Interface;
+using Application.Repository;
 using Application.Services.Commands;
 using Application.Services.Querie;
 using Domain.Models;
-using Infrastructure.Repository;
 using Infrastructure;
 
 namespace Api

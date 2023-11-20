@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
-using Infrastructure.Repository;
+using Application.Repository;
+using Application.Services.Resources;
 
 namespace Application.Services.Commands
 {
@@ -12,9 +13,12 @@ namespace Application.Services.Commands
             _bankAccountRepository = bankAccountRepository;
         }
 
-        public async Task create(BankAccount command)
+        public string Create(BankAccount command)
         {
+            var account = _bankAccountRepository.GetById(command.IdAccount);
+            if (account != null) return Resource.CuentaExiste;
             _bankAccountRepository.Add(command);
+            return Resource.CuentaCreada;
         }
 
         public void delete(Guid id)

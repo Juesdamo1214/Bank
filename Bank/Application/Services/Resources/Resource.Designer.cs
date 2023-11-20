@@ -79,6 +79,24 @@ namespace Application.Services.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cuenta creada exitosamente!.
+        /// </summary>
+        internal static string CuentaCreada {
+            get {
+                return ResourceManager.GetString("CuentaCreada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cuenta existente!.
+        /// </summary>
+        internal static string CuentaExiste {
+            get {
+                return ResourceManager.GetString("CuentaExiste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Transacion Exitosa.
         /// </summary>
         internal static string ExitoTransacion {

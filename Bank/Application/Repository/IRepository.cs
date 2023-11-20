@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Repository
+﻿namespace Application.Repository
 {
     public interface IRepository<T> where T : class
     {

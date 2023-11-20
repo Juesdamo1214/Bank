@@ -1,7 +1,7 @@
 ﻿using Application.Services.Resources;
 using Domain.Enum;
 using Domain.Models;
-using Infrastructure.Repository;
+using Application.Repository;
 
 namespace Application.Services.Commands
 {

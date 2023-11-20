@@ -66,9 +66,11 @@ C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Appli
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Domain.dll
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Infrastructure.dll
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Application.pdb
-C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Domain.pdb
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Infrastructure.pdb
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\bin\Debug\net7.0\Domain.pdb
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.csproj.AssemblyReference.cache
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.Controllers._Resource.Resource.resources
+C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.csproj.GenerateResource.cache
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.AssemblyInfoInputs.cache
 C:\Users\juesd\OneDrive\Escritorio\EjercicioBank\Bank\Api\obj\Debug\net7.0\Api.AssemblyInfo.cs
